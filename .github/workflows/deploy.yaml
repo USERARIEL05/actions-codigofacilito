@@ -14,8 +14,17 @@ jobs:
       # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     
     steps:
+      
+      - name: working dir
+        run: ls -al 
+
+
       - name: Checkout code
         uses: actions/checkout@v4
+
+      
+      - name: working dir after action
+        run: ls -al
 
         
       - name: Saludo
