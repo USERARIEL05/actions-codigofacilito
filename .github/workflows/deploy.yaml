@@ -2,7 +2,7 @@ name: Practica GitHub Actions
 
 on:
   push:
-    branches: ["main"]
+    branches: [ main ]
 
 jobs:
   deploy-codigoTest:
@@ -10,5 +10,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+        
+      - name: Saludo
 
         run: echo "Hola, mundo!"
