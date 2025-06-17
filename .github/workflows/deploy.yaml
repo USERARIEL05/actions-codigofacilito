@@ -19,6 +19,7 @@ jobs:
         
         
   second_job:
+          needs: deploy-codigoTest
           runs-on: ubuntu-latest
           steps:
             - name: Checkout code
