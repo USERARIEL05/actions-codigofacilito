@@ -1,10 +1,10 @@
-name: "Practica GitHub Actions"
+name: Practica GitHub Actions
 
 on:
   push:
     branches: ["main"]
-    
-    jobs:
+
+jobs:
   deploy-codigoTest:
     runs-on: ubuntu-latest
     steps:
@@ -28,5 +28,5 @@ on:
       - name: Deploy to server
         run: |
           echo "Deploying to server..."
-          # Aquí iría el comando para desplegar tu aplicación, por ejemplo:
+          # Aquí iría el comando para desplegar tu aplicación
           # scp -r . user@server:/path/to/deploy
