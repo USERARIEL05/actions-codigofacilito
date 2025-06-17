@@ -7,13 +7,18 @@ on:
 jobs:
   deploy-codigoTest:
     runs-on: ubuntu-latest
+    env:
+    name: Deploy Codigo Test
+    # This is a comment
+      # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
         
       - name: Saludo
-        run: echo "Hola, mundo 1!"
+        run: echo "Hola, mundo 1! $name"
 
         
         
