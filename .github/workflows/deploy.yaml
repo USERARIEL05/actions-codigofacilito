@@ -57,7 +57,7 @@ jobs:
           runs-on: ubuntu-latest
 
           env:
-            my_vr: ${{ needs.deploy-codigoTest.outputs.my_variable }} #se obtiene la variable de salida del job anterior
+            my_variable: ${{ needs.deploy-codigoTest.outputs.my_variable }} #se obtiene la variable de salida del job anterior
           # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           steps:
 
