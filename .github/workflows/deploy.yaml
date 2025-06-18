@@ -47,7 +47,7 @@ jobs:
       - name: obtener mensaje
         run: echo "${{ steps.step_1.outputs.my_variable }}"
      
-
+#generar un archivo y subirlo como artefacto
       - name: generar archivo
         run: |
          echo "Este es un archivo generado por el job deploy-codigoTest" >> test.log 
@@ -55,8 +55,8 @@ jobs:
       - name: subir artefacto
         uses: actions/upload-artifact@v4
         with:
-        name: archivo-test
-        pahth: test.log
+         name: archivo-test
+         pahth: test.log
   
   
   
