@@ -26,6 +26,10 @@ jobs:
       - name: working dir after action
         run: ls -al
 
+        Steps:
+        - name: working
+          run: echo "my_variable=hola zzz" >> $GITHUB_OUTPUT
+
         
       - name: Saludo
         run: echo "Hola, mundo 1! $name"
