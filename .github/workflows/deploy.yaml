@@ -35,7 +35,6 @@ jobs:
         id: step_1
         run: echo "my_variable=hola zzz" >> $GITHUB_OUTPUT
 
-
       - name: obtener mensaje
         run: echo "${{ steps.step_1.outputs.my_variable }}"
      
