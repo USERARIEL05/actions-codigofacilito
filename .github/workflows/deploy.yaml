@@ -61,7 +61,7 @@ jobs:
           # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           steps:
 
-           - name: mi variable
+           - name: mi variable.
              run: echo "$my_var"
 
            - name: Checkout code
