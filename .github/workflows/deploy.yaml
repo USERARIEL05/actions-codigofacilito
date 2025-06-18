@@ -57,12 +57,12 @@ jobs:
           runs-on: ubuntu-latest
 
           env:
-            my_variable: ${{ needs.deploy-codigoTest.outputs.my_variable }} #se obtiene la variable de salida del job anterior
+            my_var: ${{ needs.deploy-codigoTest.outputs.my_variable }} #se obtiene la variable de salida del job anterior
           # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           steps:
 
            - name: mi variable
-             run: echo "my_variable"
+             run: echo "$my_variable"
 
            - name: Checkout code
              uses: actions/checkout@v4
