@@ -62,7 +62,7 @@ jobs:
           steps:
 
            - name: mi variable
-             run: echo "my_vr"
+             run: echo "my_variable"
 
            - name: Checkout code
              uses: actions/checkout@v4
