@@ -8,6 +8,11 @@ jobs:
   deploy-codigoTest:
     runs-on: ubuntu-latest
 
+    outputs:
+      my_variable: ${{ steps.step_1.outputs.my_variable }} 
+      #define output variable
+    # This is a comment
+
     env:
       name: Deploy Codigo Test
     # This is a comment
@@ -34,7 +39,10 @@ jobs:
       - name: working
         id: step_1
         run: echo "my_variable=hola zzz" >> $GITHUB_OUTPUT
-
+#se crea una variable de salida que se puede usar en otros jobs
+        # echo "my_variable=hola zzz" >> $GITHUB_OUTPUT
+        # echo "my_variable=hola zzz" >> $GITHUB_ENV
+        #se define una variable de salida que se puede usar en otros jobs
       - name: obtener mensaje
         run: echo "${{ steps.step_1.outputs.my_variable }}"
      
@@ -43,15 +51,22 @@ jobs:
         
         
   second_job:
+
           if: ${{ github.ref == 'refs/heads/main' }}
           needs: deploy-codigoTest
           runs-on: ubuntu-latest
-          
+
+          env:
+            my_vr: ${{ needs.deploy-codigoTest.outputs.my_variable }} #se obtiene la variable de salida del job anterior
+          # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           steps:
 
-            - name: Checkout code
-              uses: actions/checkout@v4
+           - name: mi variable
+             run: echo "my_vr"
+
+           - name: Checkout code
+             uses: actions/checkout@v4
 
 
-            - name: Saludo
-              run: echo "Hola, mundo 2! ${{ github.ref }}"  
+           - name: Saludo
+             run: echo "Hola, mundo 2! ${{ github.ref }}"  
