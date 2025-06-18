@@ -56,7 +56,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
          name: archivo-test
-         pahth: test.log
+         path: test.log
   
   
   
