@@ -30,17 +30,14 @@ jobs:
       - name: Saludo
         run: echo "Hola, mundo 1! $name"
         
- 
- 
-  steps:
-  
-  - name: working
-    id: step_1
-    run: echo "my_variable=hola zzz" >> $GITHUB_OUTPUT
+
+      - name: working
+        id: step_1
+        run: echo "my_variable=hola zzz" >> $GITHUB_OUTPUT
 
 
-  - name: obtener mensaje
-    run: echo "${{ steps.step_1.outputs.my_variable }}"
+      - name: obtener mensaje
+        run: echo "${{ steps.step_1.outputs.my_variable }}"
      
 
         
@@ -50,9 +47,12 @@ jobs:
           if: ${{ github.ref == 'refs/heads/main' }}
           needs: deploy-codigoTest
           runs-on: ubuntu-latest
+          
           steps:
+
             - name: Checkout code
               uses: actions/checkout@v4
+
 
             - name: Saludo
               run: echo "Hola, mundo 2! ${{ github.ref }}"  
