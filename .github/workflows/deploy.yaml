@@ -36,6 +36,7 @@ jobs:
 
       
       - name: working
+        
         run: echo "my_variable=hola zzz" >> $GITHUB_OUTPUT
 
         
