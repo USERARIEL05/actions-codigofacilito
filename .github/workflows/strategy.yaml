@@ -9,5 +9,11 @@ jobs:
       strategy:
         fail-fast: false
         matrix:
+          message: [ "Hola, mundo 1", "Hola, mundo 2", "Hola, mundo 3" ]
           os: [ubuntu-latest, windows-latest, macos-latest]
           node-version: [14, 16, 18]
+
+
+      steps:
+        - name: Print message
+          run: echo "${{ matrix.message }}"
